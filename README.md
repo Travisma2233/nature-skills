@@ -3,6 +3,16 @@
 
 Hello everyone, I’m Yuan Yizhe, a PhD student at Shanghai Jiao Tong University. I’m currently working on research and entrepreneurial projects in medical AI. Thank you for your continued interest in nature-skill. If you have any requests, feel free to open an issue. If we find the request meaningful and feasible, we’ll do our best to implement it. We also welcome PRs, but please make sure to follow the submission format described later in the README so that we can review and merge them more efficiently.
 
+## Important Attribution
+
+Most writing knowledge and methodology in this repository comes from Prof. Peng Sida (彭思达)'s open study notes:
+[https://pengsida.notion.site/c1a22465a0fa4b15a12985223916048e](https://pengsida.notion.site/c1a22465a0fa4b15a12985223916048e)
+
+Prof. Peng's original repository:
+[https://github.com/pengsida/learning_research](https://github.com/pengsida/learning_research)
+
+I sincerely thank Prof. Peng for openly sharing these valuable experiences. My contribution is organization, structured adaptation, and packaging as reusable Skills.
+
 ## 📢 课题组诚招“医学 + AI”实习生
 
 <table border="0" cellpadding="10" cellspacing="0">
@@ -139,6 +149,7 @@ In that case:
 |-------|--------|---------|-----------------|
 | [`nature-figure`](skills/nature-figure/README.md) | Stable | Publication-ready matplotlib figures | "Nature figure", "publication plot", "scientific figure" |
 | [`nature-polishing`](skills/nature-polishing/README.md) | Stable | Academic prose polishing to *Nature* style | "Nature style", "polish", "academic writing" |
+| [`nature-paper-writing`](skills/nature-paper-writing/README.md) | Draft | Section-level research manuscript drafting, flow checks, and claim-evidence self-review | "paper writing", "draft section", "claim evidence", "paper review" |
 | [`nature-citation`](skills/nature-citation/README.md) | Beta | Strict Nature / CNS-family citation retrieval with ENW, RIS, and Zotero RDF export | "Nature citation", "CNS citation", "text citation", "supporting references", "Zotero RDF" |
 | [`nature-data`](skills/nature-data/README.md) | Draft | Nature Data Availability statements, repository plans, and FAIR checks | "Data Availability", "repository", "FAIR metadata", "data availability statement" |
 | [`nature-reader`](skills/nature-reader/README.md) | Beta | Full-paper bilingual Markdown reader with source anchors and figure grounding | "nature reader", "full markdown", "paper md", "原文对照", "图文对应", "全文翻译" |
@@ -235,6 +246,49 @@ Proofreading → Plain-text output
 skills/nature-polishing/
 ├── README.md
 └── SKILL.md    25 rules + 12-step workflow (loaded by Claude automatically)
+```
+
+---
+
+## nature-paper-writing
+
+**What it does** - Drafts, restructures, and self-reviews research manuscript sections
+with reviewer-facing logic. It works at the level of paper story, section role, paragraph
+flow, and claim-evidence alignment before surface polishing.
+
+**Built from** - A reusable `research-paper-writing` skill for ML/CV/NLP-style papers,
+expanded into a Nature-family manuscript-writing unit with modular section guides and
+a final adversarial paper-review workflow.
+
+**Key rules enforced**
+
+| Domain | Core rule |
+|--------|-----------|
+| Section logic | Load only the needed section guide for Abstract, Introduction, Related Work, Method, Experiments, or Conclusion |
+| Paragraph flow | Keep one paragraph to one message and verify flow with reverse outlining |
+| Claim evidence | Map major claims to experimental evidence and weaken unsupported claims |
+| Reviewer stance | Read drafts as a skeptical reviewer before finalising prose |
+| Visual argument | Treat figures, tables, teaser figures, and pipeline figures as core evidence |
+| Output contract | Return an outline, role-labelled paragraphs, a self-review checklist, and a claim-evidence map |
+
+**Reference files**
+
+```text
+skills/nature-paper-writing/
+├── README.md
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+    ├── abstract.md
+    ├── conclusion.md
+    ├── does-my-writing-flow-source.md
+    ├── experiments.md
+    ├── introduction.md
+    ├── method.md
+    ├── paper-review.md
+    ├── related-work.md
+    └── examples/
 ```
 
 ---
