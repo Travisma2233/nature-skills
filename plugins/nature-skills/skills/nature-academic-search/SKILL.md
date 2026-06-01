@@ -3,7 +3,8 @@ name: nature-academic-search
 description: >-
   Multi-source literature search, citation verification, MeSH search strategy,
   citation file management (.nbib/.ris/.bib conversion), and reference management
-  (BibTeX, related articles, ID conversion) via MCP tools (PubMed, CrossRef, arXiv).
+  (BibTeX, related articles, ID conversion) via MCP tools (PubMed, CrossRef,
+  arXiv, Scopus, ScienceDirect).
   Use when the user needs coordinated multi-step literature workflows beyond a
   single MCP call.
 version: 2.0.0

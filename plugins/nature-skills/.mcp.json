@@ -6,7 +6,7 @@
         "run",
         "--no-project",
         "--directory",
-        "<MCP_SERVER_DIR>",
+        "${CLAUDE_PLUGIN_ROOT}/skills/nature-academic-search/mcp-server",
         "--with",
         "mcp>=1.0.0,<2.0.0",
         "--with",
